@@ -7,27 +7,27 @@ ThemeData darkTheme = ThemeData(
   textTheme: TextTheme(
     titleLarge: TextStyle(
       fontFamily: GoogleFonts.lato().fontFamily,
-      fontSize: 28,
+      fontSize: 23,
     ),
     titleMedium: TextStyle(
       fontFamily: GoogleFonts.lato().fontFamily,
-      fontSize: 24,
+      fontSize: 21,
     ),
     titleSmall: TextStyle(
       fontFamily: GoogleFonts.lato().fontFamily,
-      fontSize: 20,
+      fontSize: 19,
     ),
     bodyLarge: TextStyle(
       fontFamily: GoogleFonts.lato().fontFamily,
-      fontSize: 28,
+      fontSize: 22,
     ),
     bodyMedium: TextStyle(
       fontFamily: GoogleFonts.lato().fontFamily,
-      fontSize: 26,
+      fontSize: 20,
     ),
     bodySmall: TextStyle(
       fontFamily: GoogleFonts.lato().fontFamily,
-      fontSize: 24,
+      fontSize: 18,
     ),
   ),
   buttonTheme: ButtonThemeData(

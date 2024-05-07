@@ -1,16 +1,19 @@
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class TextFields extends StatelessWidget {
   TextFields(
       {super.key,
-      required this.disabled,
+      required this.readOnly,
+      this.maxLength,
       required this.hintText,
       required this.onTap,
-      required this.icon,
+      this.icon,
       required this.cursorStyle});
-  bool disabled;
+  bool readOnly;
+  int? maxLength;
   String hintText;
-  IconData icon;
+  IconData? icon;
   Function() onTap;
   MouseCursor cursorStyle;
   @override
@@ -18,13 +21,15 @@ class TextFields extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: SizedBox(
-        height: 49,
+        height: 100,
         child: TextField(
+          style: Theme.of(context).textTheme.bodyMedium,
+          maxLength: maxLength,
+          readOnly: readOnly,
           textCapitalization: TextCapitalization.none,
           cursorHeight: 40,
           mouseCursor: cursorStyle,
           onTap: onTap,
-          enabled: disabled,
           decoration: InputDecoration(
             disabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(20),

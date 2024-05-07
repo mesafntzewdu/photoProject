@@ -1,4 +1,3 @@
-import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:photo/component/text_field.dart';
 import 'package:photo/utils/file_picker.dart';
@@ -9,7 +8,7 @@ class AddUser extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(8.0),
+      padding: const EdgeInsets.all(8.0),
       child: Scaffold(
         body: Center(
           child: Column(
@@ -20,23 +19,25 @@ class AddUser extends StatelessWidget {
                 decoration:
                     BoxDecoration(border: Border.all(color: Colors.black)),
                 child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     TextFields(
-                      disabled: true,
+                      readOnly: false,
+                      maxLength: 30,
                       hintText: 'Client name',
                       onTap: () {},
                       icon: Icons.person,
                       cursorStyle: SystemMouseCursors.alias,
                     ),
                     TextFields(
-                      disabled: false,
+                      readOnly: true,
                       hintText: 'Image folder',
                       onTap: () {},
                       icon: Icons.folder,
                       cursorStyle: SystemMouseCursors.click,
                     ),
                     TextFields(
-                      disabled: false,
+                      readOnly: true,
                       hintText: 'Profile image',
                       onTap: () {},
                       icon: Icons.image,
@@ -45,11 +46,15 @@ class AddUser extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.only(bottom: 8.0, top: 4),
                       child: OutlinedButton.icon(
-                          onPressed: () {
-                            FilePickers().filePicker();
-                          },
-                          icon: Icon(Icons.add),
-                          label: Text('Add Client')),
+                        onPressed: () {
+                          FilePickers().filePicker();
+                        },
+                        icon: const Icon(Icons.add),
+                        label: Text(
+                          'Add Client',
+                          style: Theme.of(context).textTheme.bodyMedium,
+                        ),
+                      ),
                     )
                   ],
                 ),

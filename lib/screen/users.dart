@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:photo/component/card.dart';
 
 class Users extends StatelessWidget {
@@ -8,14 +7,15 @@ class Users extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(8),
+      padding: const EdgeInsets.all(8),
       width: 800,
       child: Scaffold(
         body: GridView.builder(
-            gridDelegate:
-                SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 4),
-            itemCount: 10,
-            itemBuilder: (context, index) => GridCard()),
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 4),
+          itemCount: 10,
+          itemBuilder: (context, index) => const GridCard(),
+        ),
       ),
     );
   }
